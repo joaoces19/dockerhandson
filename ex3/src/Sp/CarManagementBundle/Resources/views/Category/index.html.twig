@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories Page!{% endblock %}
+
+{% block body %}
+    <h1>Add New Category </h1>
+    {{ form_start(newCategoryForm) }}
+    {{ form_widget(newCategoryForm) }}
+    {{ form_end(newCategoryForm) }}
+
+    <br/><br/>
+
+    <h1>Edit Category Name </h1>
+
+    {{ form_start(editCategoryForm) }}
+    {{ form_widget(editCategoryForm) }}
+    {{ form_end(editCategoryForm) }}
+
+    <br/><br/>
+
+    <h1>Category List </h1>
+
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}
+                <a href='{{path('categoryRemove', {'id':category.id})}}'>remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

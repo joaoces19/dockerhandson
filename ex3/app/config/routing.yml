@@ -1,0 +1,10 @@
+car_management:
+    resource: "@CarManagementBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+homepage:
+    path:  /
+    defaults: { _controller: CarManagementBundle:Category:index }
+    requirements:
+        _method: GET

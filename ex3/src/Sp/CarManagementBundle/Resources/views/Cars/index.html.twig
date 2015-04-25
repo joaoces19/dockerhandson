@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars Page!{% endblock %}
+
+{% block body %}
+    <h1>Add New Car</h1>
+    {{ form_start(newCarForm) }}
+    {{ form_widget(newCarForm) }}
+    {{ form_end(newCarForm) }}
+
+    <br/><br/>
+
+    <h1>Car List </h1>
+
+    <table>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.category }}</td>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.fueltype }}</td>
+                <td>{{ car.priceperday }}</td>
+                <td>
+                    {% if(car.status==1) %}
+                        <b>Activo</b>
+                    {% else %}
+                        Inactivo
+                    {% endif %}
+                </td>
+                <td><a href='{{path('carRemove', {'id':car.id})}}'>remove</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
