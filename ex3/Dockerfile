@@ -37,3 +37,5 @@ RUN rm -rf app/cache/* \
 --> INSERIR AQUI INSTRUÇÃO
 #Indicar que o ficheiro a executar quando o Container iniciar é o docker-entrypoint.sh
 --> INSERIR AQUI INSTRUÇÃO
+#Atribuir permissões de execução ao ficheiro docker-entrypoint (chmod +x)
+--> INSERIR AQUI INSTRUÇÃO
