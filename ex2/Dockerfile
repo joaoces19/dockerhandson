@@ -10,3 +10,9 @@
 #TIP: consultar slide 13
 #1.4 Aceder através do browser ao endereço localhost:9000.
 #1.5 Efectuar uma alteração ao ficheiro index.html e voltar a aceder ao endereço localhost:9000. 
+
+FROM ubuntu 
+
+RUN apt-get update && apt-get install -y apache2
+
+ENTRYPOINT /usr/sbin/apache2ctl -D FOREGROUND

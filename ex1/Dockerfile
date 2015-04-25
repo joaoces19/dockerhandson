@@ -10,3 +10,7 @@
 #TIP: consultar slide 13
 #1.4 Aceder através do browser ao endereço localhost:9000.
 #1.5 Efectuar uma alteração ao ficheiro index.html e voltar a aceder através do browser ao endereço localhost:9000. 
+
+FROM ubuntu 
+
+RUN apt-get update && apt-get apache
